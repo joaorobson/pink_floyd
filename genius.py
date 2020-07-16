@@ -155,7 +155,13 @@ class Artist(object):
 
         # Write the lyrics to either a .json or .txt file
         if write_file:
-            with open(filename, 'w') as lyrics_file:
+            lyrics_dir = 'lyrics/'
+            try:
+                os.mkdir(lyrics_dir)
+            except:
+                pass
+
+            with open(lyrics_dir + filename, 'w') as lyrics_file:
                 if format == 'json':
                     json.dump(lyrics_to_write, lyrics_file)
                 else:

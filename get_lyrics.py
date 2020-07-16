@@ -19,8 +19,5 @@ ALBUMS = ["The Piper at the Gates of Dawn",
 
 GENIUS_KEY = os.environ['GENIUS_KEY']
 API = genius.Genius(GENIUS_KEY)
-genius.Genius.search_album(API, "Pink Floyd","More (Original Film Soundtrack)" )
-'''
 for album in ALBUMS:
     genius.Genius.search_album(API, "Pink Floyd", album)
-'''
